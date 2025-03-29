@@ -30,6 +30,30 @@
 - Confirm that the file paths for downloads and target folders (used in the script) are correct and accessible.
 - Ensure the test profile for Chrome (`chrome_selenium_profile`) exists and is set up with stored login credentials for seamless automation.
 
+# Explanation of script
+
+- **Configuration Settings:**  
+  Paths and settings are defined at the top of the script.
+
+- **Step 1:**  
+  Launch Chrome in debug mode using a specific profile.
+
+- **Step 2:**  
+  Connect to the running Chrome instance and open the target website.
+
+- **Step 3:**  
+  Click the login button.
+
+- **Steps 4–7:**  
+  Interact with various elements (Export button, date input, "All" option, and final Export button) using JavaScript to access shadow DOM elements.
+
+- **Step 8:**  
+  Wait for downloads to complete and then close the automated Chrome instance.
+
+- **Step 9:**  
+  Move the downloaded file and rename a worksheet in the Excel file.
+
+
 
 This guide covers the necessary steps and dependencies required to run the script successfully. Feel free to modify it according to your specific setup.
 
