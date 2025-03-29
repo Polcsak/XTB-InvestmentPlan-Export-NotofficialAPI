@@ -19,3 +19,14 @@
    Install the necessary libraries using `pip`:
    ```bash
    pip install selenium openpyxl requests
+
+5. **Additional Setup for Chrome Debugging**
+
+- Verify that the paths defined in your script are correct (e.g., `chrome_path`, `user_data_path`, etc.).
+- The script launches Chrome in debug mode on a specified port (`9222`). Ensure no other application is using this port.
+
+6. **Environment Configuration**
+
+- Confirm that the file paths for downloads and target folders (used in the script) are correct and accessible.
+- Ensure the test profile for Chrome (`chrome_selenium_profile`) exists and is set up with stored login credentials for seamless automation.
+
