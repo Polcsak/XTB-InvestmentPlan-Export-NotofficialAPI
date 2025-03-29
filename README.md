@@ -30,3 +30,6 @@
 - Confirm that the file paths for downloads and target folders (used in the script) are correct and accessible.
 - Ensure the test profile for Chrome (`chrome_selenium_profile`) exists and is set up with stored login credentials for seamless automation.
 
+
+This guide covers the necessary steps and dependencies required to run the script successfully. Feel free to modify it according to your specific setup.
+
