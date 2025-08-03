@@ -23,8 +23,12 @@ csv_file_path = r"path/to/your/csv_file.csv  # path to the CSV file"
 # ----------------------------
 # Step 1: Launch Chrome in Debug Mode with a Specific Test Profile
 # ----------------------------
-chrome_command = f'"{chrome_path}" --remote-debugging-port={chrome_debug_port} --user-data-dir="{user_data_path}" --disable-component-update'
-subprocess.Popen(chrome_command, shell=True)
+chrome_command = (
+    f'"{chrome_path}" --remote-debugging-port={chrome_debug_port} '
+    f'--user-data-dir="{user_data_path}" --disable-component-update'
+)
+# Store the handle so the process can be terminated later
+chrome_process = subprocess.Popen(chrome_command, shell=True)
 time.sleep(3)
 
 # ----------------------------
@@ -121,8 +125,10 @@ except Exception as e:
 # Step 8: Wait for the Download and Close the Automated Chrome Instance
 # ----------------------------
 time.sleep(15)
-# Terminate processes launched with the specified Chrome profile
-os.system('wmic process where "commandline like \'%%chrome_selenium_profile%%\'" call terminate >nul 2>&1')
+driver.quit()
+# Gracefully close the Chrome process started in debug mode
+chrome_process.terminate()
+chrome_process.wait()
 print("Automated Chrome instance has been closed.")
 
 # ----------------------------
